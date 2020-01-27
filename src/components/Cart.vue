@@ -15,18 +15,18 @@
 </template>
 
 <script>
-import router from 'vue-router'
+//import router from 'vue-router'
 
 export default {
-  beforeRouteEnter (to, from, next) {
-    console.log('hi', router.options)
+  beforeRouteEnter(to, from, next) {
     next(c => {
+      console.log('in next:', c.$router.getBookmark)
       c.$routerBookmark = c.$router.getBookmark()
     })
   },
 
   methods: {
-    close () {
+    close() {
       console.log('called', this.$routerBookmark)
       this.$router.gotoBookmark(this.$routerBookmark)
     }

@@ -16,11 +16,8 @@
 </template>
 
 <script>
-import routeWrapper from './routeWrapper.js'
-
 export default {
-  props: ['productId'],
-  components: { routeWrapper }
+  props: ['productId']
 }
 </script>
 

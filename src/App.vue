@@ -14,11 +14,9 @@
 import Vue from 'vue'
 import routeWrapper from './components/routeWrapper.js'
 Vue.component('route-wrapper', routeWrapper)
-import router from './router/index.js'
 
 export default {
-  name: 'App',
-  router: router
+  name: 'App'
 }
 </script>
 
