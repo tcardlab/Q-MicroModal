@@ -1,12 +1,14 @@
 <template>
   <div id="q-app">
-    <router-link to="/product/123">Product</router-link>
-    <router-link to="/shipping">Shipping</router-link>
-    <router-link to="/cart">Shopping cart</router-link>
+    <component :is="layout">
+      <router-link to="/product/123">Product</router-link>
+      <router-link to="/shipping">Shipping</router-link>
+      <router-link to="/cart">Shopping cart</router-link>
 
-    <route-wrapper/>
-    <route-wrapper name="footer"/>
-    <router-view name="modal"/>
+      <route-wrapper/>
+      <route-wrapper name="footer"/>
+      <router-view name="modal"/>
+    </component >
   </div>
 </template>
 
@@ -15,8 +17,18 @@ import Vue from 'vue'
 import routeWrapper from './components/routeWrapper.js'
 Vue.component('route-wrapper', routeWrapper)
 
+import MyLayout from './layouts/MyLayout.vue' // make layouts global import
+// https://itnext.io/anyway-heres-how-to-create-a-multiple-layout-system-with-vue-and-vue-router-b379baa91a05
+//  ^woth consideration, using slots since this fills router stuff
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: { MyLayout },
+  computed: {
+    layout () {
+      return 'myLayout'
+    }
+  }
 }
 </script>
 

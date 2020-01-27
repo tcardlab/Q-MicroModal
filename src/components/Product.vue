@@ -8,7 +8,7 @@
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
         </p>
-  <router-link :to="{name: 'details'}">Details</router-link>
+        <router-link :to="{name: 'details'}">Details</router-link>
         <router-link :to="{name: 'dimensions'}">Dimensions</router-link>
         <route-wrapper></route-wrapper>
       </div>

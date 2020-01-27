@@ -13,13 +13,13 @@
 </template>
 
 <script>
-import routeWrapper from '../components/routeWrapper.js'
+// import routeWrapper from '../components/routeWrapper.js'
 import myLayout from '../layouts/myLayout.vue'
 
 export default {
   name: 'PageIndex',
-  layout: myLayout,
-  components: { routeWrapper }
+  layout: myLayout
+  // components: { routeWrapper }
 }
 </script>
 

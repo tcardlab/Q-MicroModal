@@ -15,12 +15,9 @@
 </template>
 
 <script>
-// import router from 'vue-router'
-
 export default {
   beforeRouteEnter (to, from, next) {
     next(c => {
-      console.log('in next:', c.$router.getBookmark)
       c.$routerBookmark = c.$router.getBookmark()
     })
   },
