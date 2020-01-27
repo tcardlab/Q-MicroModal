@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       x: 5,
       y: 6

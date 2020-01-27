@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import _ from 'underscore'
+import _ from 'lodash' // 'underscore'
 
 import routes from './routes'
 
@@ -11,7 +11,8 @@ Vue.use(VueRouter)
  * directly export the Router instantiation
  */
 
-export default function(/* { store, ssrContext } */) {
+/* eslint-disable eqeqeq */
+export default function (/* { store, ssrContext } */) {
   const Router = new VueRouter({
     scrollBehavior: () => ({ x: 0, y: 0 }),
     routes,
@@ -59,12 +60,12 @@ export default function(/* { store, ssrContext } */) {
 
   // Return a bookmark information that can be then used to
   // navigate back to that location
-  Router.getBookmark = function() {
+  Router.getBookmark = function () {
     return pathStack[pathStack.currentPos]
   }
 
   // Goes back/forward in history by given bookmark
-  Router.gotoBookmark = function(bookmark) {
+  Router.gotoBookmark = function (bookmark) {
     if (bookmark) {
       // Try to find how many steps we need to take
       var currentKey = history.state && history.state.key
